@@ -87,7 +87,7 @@ To ensure trust and clinical reliability:
 ## Setup Instructions
 
 ### Step 1: Install Dependencies
-pip install -r requirements.txt ```md
+pip install -r requirements.txt
 
 ### Step 2: Set Environment Variable
 Mac / Linux
