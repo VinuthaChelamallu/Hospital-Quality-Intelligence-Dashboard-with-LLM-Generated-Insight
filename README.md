@@ -87,42 +87,28 @@ To ensure trust and clinical reliability:
 ## Setup Instructions
 
 ### Step 1: Install Dependencies
-```bash
-pip install -r requirements.txt
+pip install -r requirements.txt ```md
 
-Step 2: Set Environment Variable
+### Step 2: Set Environment Variable
 Mac / Linux
-
-Bash
-
 export ANTHROPIC_API_KEY="your_api_key_here"
 Windows
-
-Bash
-
 setx ANTHROPIC_API_KEY "your_api_key_here"
-Step 3: Start TabPy (Terminal 1)
-Open a new terminal window and run:
 
-Bash
-
-tabpy
+### Step 3: Start TabPy (Terminal 1)
+Open a new terminal window and run: tabpy
 TabPy will start on: http://localhost:9004
 
-Step 4: Deploy the Python Function (Terminal 2)
+### Step 4: Deploy the Python Function (Terminal 2)
 Open a second terminal window and run:
-
-Bash
-
 python deploy_claude_dashboard_summary.py
 You should see: Deployed endpoint: claude_dashboard_summary
 
-Tableau Integration
-To display the summary in your dashboard, create a Calculated Field in Tableau using the following code:
-
-SQL
-
-SCRIPT_STR(
-  "return excel_provider.claude_dashboard_summary(_arg1)",
-  ATTR([Facility Name])
-)
+### Step 5: Open Tableau Dashboard
+Open Tableau Desktop
+Load the provided dashboard
+Ensure TabPy is connected:
+Help → Settings and Performance → Manage External Service Connection
+Server: localhost
+Port: 9004
+Once connected, selecting a hospital in the dashboard will trigger the LLM-generated executive summary.
