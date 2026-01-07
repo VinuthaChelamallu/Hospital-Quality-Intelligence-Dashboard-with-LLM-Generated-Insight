@@ -106,9 +106,15 @@ You should see: Deployed endpoint: claude_dashboard_summary
 
 ### Step 5: Open Tableau Dashboard
 Open Tableau Desktop
-Load the provided dashboard
+
+Load the provided dashboard (Heathcare Dashboard with Claude.twbx)
+
 Ensure TabPy is connected:
+
 Help → Settings and Performance → Manage External Service Connection
+
 Server: localhost
+
 Port: 9004
+
 Once connected, selecting a hospital in the dashboard will trigger the LLM-generated executive summary.
