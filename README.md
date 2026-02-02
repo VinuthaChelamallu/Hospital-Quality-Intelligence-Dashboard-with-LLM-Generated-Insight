@@ -6,10 +6,13 @@ Healthcare quality data is complex, fragmented, and difficult for decision-maker
 
 The solution demonstrates how **Large Language Models (LLMs)** can be responsibly integrated into business analytics workflows to enhance decision-making without replacing traditional BI tools.
 
+> **Why this matters:**  
+> Instead of asking leaders to interpret dozens of metrics, the dashboard explains performance in plain English — grounded strictly in data and designed for executive consumption.
+
 ---
 
 ## Business Problem
-Hospital leadership and analytics teams often face:
+Hospital leadership and analytics teams commonly face:
 
 - **Metric Overload:** Dozens of quality metrics spread across multiple dashboards.
 - **Narrative Gap:** Difficulty translating metric movements into executive-level narratives.
@@ -26,11 +29,22 @@ This project integrates **Claude (Anthropic LLM)** with **Tableau via TabPy** to
 **The AI summary:**
 - Interprets performance across CMS quality domains.
 - Aligns insights with the visuals already shown in Tableau.
-- Highlights strengths, risks, and priority focus areas.
-- Uses strict data-only prompting to prevent hallucinations.
+- Highlights strengths, priority risks, and focus areas.
+- Follows strict data-only prompting to prevent hallucinations.
 
 ---
+## Architecture Overview
 
+**Tableau → TabPy (Python) → Curated JSON → Claude LLM → Executive Summary rendered in Tableau**
+
+This design ensures:
+
+- Low latency  
+- Strong data control  
+- Seamless BI integration  
+- No external applications or dashboards required
+
+---
 ## Key Features
 - **Embedded AI:** LLM-powered executive summary inside the Tableau interface.
 - **Fuzzy Matching:** Hospital-level filtering with resilient facility name resolution.
